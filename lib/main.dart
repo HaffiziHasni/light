@@ -14,19 +14,21 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   bool lightOn = true;
+
   @override
   Widget build(BuildContext context) {
     return CupertinoApp(
       home: CupertinoPageScaffold(
         backgroundColor:
             lightOn ? CupertinoColors.white : CupertinoColors.black,
-        child: Center(
+        child: SizedBox.expand(
           child: CupertinoButton(
-            child: Text('Hello, World'),
+            child: Text(''),
             onPressed: () {
               setState(() {
                 lightOn = !lightOn;
-                print('$lightOn');
+
+                // alternative> lightOn ? buttonText = 'Off' : buttonText = 'On';
               });
             },
           ),
